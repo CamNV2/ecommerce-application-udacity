@@ -80,7 +80,6 @@ public class CartControllerTest {
 	void removeFromCart_NotFoundUser() {
 		Mockito.doReturn(null).when(userRepository).findByUsername(Mockito.any());
 		ResponseEntity<Cart> responseEntity = cartController.removeFromcart(new ModifyCartRequest());
-		// 
 		assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
 	}
 	
@@ -89,7 +88,6 @@ public class CartControllerTest {
 		Mockito.doReturn(new User()).when(userRepository).findByUsername(Mockito.any());
 		Mockito.doReturn(Optional.empty()).when(itemRepository).findById(Mockito.any());
 		ResponseEntity<Cart> responseEntity = cartController.removeFromcart(new ModifyCartRequest());
-		//
 		assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
 	}
 	

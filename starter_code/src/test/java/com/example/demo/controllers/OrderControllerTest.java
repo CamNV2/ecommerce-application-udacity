@@ -35,8 +35,8 @@ public class OrderControllerTest {
 
 	@Test
 	void submitNotFoundUser() {
-		Mockito.doReturn(null).when(userRepository).findByUsername("invalidUsername");
-		ResponseEntity<UserOrder> response = orderController.submit("invalidUsername");
+		Mockito.doReturn(null).when(userRepository).findByUsername("username");
+		ResponseEntity<UserOrder> response = orderController.submit("username");
 		assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 	}
 
@@ -57,7 +57,6 @@ public class OrderControllerTest {
 		Mockito.doReturn(new User()).when(userRepository).findByUsername("Username");
 		Mockito.doReturn(new ArrayList<User>()).when(orderRepository).findByUser(any());
 		ResponseEntity<List<UserOrder>> response = orderController.getOrdersForUser("Username");
-		//
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
 
@@ -65,7 +64,6 @@ public class OrderControllerTest {
 	void getOrdersForUserNotFoundUser() {
 		Mockito.doReturn(null).when(userRepository).findByUsername("Username");
 		ResponseEntity<List<UserOrder>> response = orderController.getOrdersForUser("Username");
-		//
 		assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 	}
 
@@ -85,9 +83,9 @@ public class OrderControllerTest {
 
 		Item item = new Item();
 		item.setId(1L);
-		item.setName("Item");
+		item.setName("ItemNm");
 		item.setPrice(BigDecimal.ONE);
-		item.setDescription("Item description");
+		item.setDescription("");
 
 		List<Item> items = new ArrayList<>();
 		items.add(item);

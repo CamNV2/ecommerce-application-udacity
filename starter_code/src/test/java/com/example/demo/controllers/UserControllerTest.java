@@ -58,7 +58,7 @@ public class UserControllerTest {
 	void createUser_passwordLengthThan7() {
 		Mockito.doReturn(new Cart()).when(cartRepository).save(Mockito.any());
 		CreateUserRequest request = createUserRequest();
-		request.setPassword("qwerasdaf1234");
+		request.setPassword("helloworld");
 		ResponseEntity<User> response = userController.createUser(request);
 		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
@@ -67,8 +67,8 @@ public class UserControllerTest {
 	void createUserInvalidConfirmPassword() {
 		Mockito.doReturn(new Cart()).when(cartRepository).save(Mockito.any());
 		CreateUserRequest request = createUserRequest();
-		request.setPassword("qwerasdaf1234");
-		request.setConfirmPassword("qwerasdaf12345");
+		request.setPassword("helloworld");
+		request.setConfirmPassword("helloworlderr");
 		ResponseEntity<User> response = userController.createUser(request);
 		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
@@ -77,15 +77,15 @@ public class UserControllerTest {
 	void createUserSuccess() {
 		Mockito.doReturn(new Cart()).when(cartRepository).save(Mockito.any());
 		CreateUserRequest request = createUserRequest();
-		request.setPassword("qwerasdaf1234");
-		request.setConfirmPassword("qwerasdaf1234");
+		request.setPassword("helloworld");
+		request.setConfirmPassword("helloworld");
 		ResponseEntity<User> response = userController.createUser(request);
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
 	
 	private CreateUserRequest createUserRequest() {
 		CreateUserRequest request = new CreateUserRequest();
-		request.setUsername("qwerasdaf1234");
+		request.setUsername("helloworld");
 		return request;
 	}
 }

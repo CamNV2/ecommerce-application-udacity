@@ -1,6 +1,8 @@
-2023-10-25 23:21:30,248 INFO c.e.d.c.UserController [main] ==== Create user request ====
-2023-10-25 23:21:30,263 INFO c.e.d.c.UserController [main] ==== Create user request successes ====
-2023-10-25 23:21:30,271 INFO c.e.d.c.UserController [main] ==== Create user request ====
-2023-10-25 23:21:30,273 ERROR c.e.d.c.UserController [main] ==== Error when create user ====
-2023-10-25 23:21:30,285 INFO c.e.d.c.UserController [main] ==== Create user request ====
-2023-10-25 23:21:30,285 ERROR c.e.d.c.UserController [main] ==== Error when create user ====
+2023-10-26 00:14:01,331 INFO c.e.d.c.UserController [main] Found user with username: camnv2
+2023-10-26 00:14:01,402 INFO c.e.d.c.UserController [main] Create user with username: helloworld
+2023-10-26 00:14:01,406 INFO c.e.d.c.UserController [main] Create user helloworld request successes
+2023-10-26 00:14:01,437 INFO c.e.d.c.UserController [main] Create user with username: helloworld
+2023-10-26 00:14:01,444 ERROR c.e.d.c.UserController [main]  Error when create user: helloworld
+2023-10-26 00:14:01,461 INFO c.e.d.c.UserController [main] Create user with username: helloworld
+2023-10-26 00:14:01,461 ERROR c.e.d.c.UserController [main]  Error when create user: helloworld
+2023-10-26 00:14:01,465 INFO c.e.d.c.UserController [main] Found user with username: camnv2

@@ -59,9 +59,9 @@ public class ItemControllerTest {
 		List<Item> items = new ArrayList<>();
 		Item item = new Item();
 		item.setId(1L);
-		item.setName("item");
+		item.setName("itemNm");
 		item.setPrice(BigDecimal.ONE);
-		item.setDescription("item description");
+		item.setDescription("");
 		items.add(item);
 		Mockito.doReturn(items).when(itemRepository).findByName("item");
 		ResponseEntity<List<Item>> responseEntity = itemController.getItemsByName("item");
